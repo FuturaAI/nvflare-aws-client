@@ -5,10 +5,11 @@ Simple Python scripts to download sites and job results from an API server.
 ## Prerequisites
 
 - Python 3.x
+- CUDA (GPU support)
 
 Install dependencies:
 ```bash
-pip install requests python-dotenv
+pip install -r requirements.txt
 ```
 
 ## Configuration
@@ -36,6 +37,7 @@ SERVER_URL="http://<server-ip>:<port>"
 │       └── nvflare_inference_HE.ipynb
 ├── get_client.py               # Site download script
 ├── get_job_result.py           # Job results download script
+├── requirements.txt            # Python dependencies
 └── .env.default                # Environment template
 ```
 
