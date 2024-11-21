@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 from zipfile import ZipFile
 from dotenv import load_dotenv
+import sys
 load_dotenv()
 
 # API configuration
@@ -39,8 +40,10 @@ def download_job(job_id: str, output_dir: str):
         print(f"Error downloading job: {e}")
 
 if __name__ == "__main__":
-    # Example usage
-    job_id = "e26aaed7-0934-4c9c-85e1-a91a130610c9"  # Replace with actual job ID
+    if len(sys.argv) != 2:
+        print("Usage: python3 get_job_result.py <job-id>")
+        sys.exit(1) 
+    job_id = sys.argv[1]
     output_dir = "downloads"  # Directory where files will be saved
     download_job(job_id, output_dir)
     

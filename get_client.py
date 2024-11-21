@@ -36,10 +36,10 @@ def download_site(site_id: str, output_dir: str):
         print(f"Error downloading site: {e}")
 
 if __name__ == "__main__":
-   if len(sys.argv) != 2:
-       print("Usage: python3 get_client.py <site_id>")
-       sys.exit(1)
-       
-   site_id = sys.argv[1]
-   output_dir = "downloads"
-   download_site(site_id, output_dir)
+    if len(sys.argv) != 2:
+        print("Usage: python3 get_client.py <site_id>")
+        sys.exit(1)
+        
+    site_id = sys.argv[1]
+    output_dir = "downloads"
+    download_site(site_id, output_dir)
