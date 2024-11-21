@@ -43,6 +43,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 get_job_result.py <job-id>")
         sys.exit(1) 
+
     job_id = sys.argv[1]
     output_dir = "downloads"  # Directory where files will be saved
     download_job(job_id, output_dir)
