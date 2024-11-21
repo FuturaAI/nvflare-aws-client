@@ -1,0 +1,1 @@
+Cartella del test set per inferenza

@@ -1,0 +1,13 @@
+python-dotenv
+ruamel.yaml
+nvflare==2.5.1
+torch
+tensorflow
+tenseal
+split-folders
+pillow
+torchvision
+ipykernel
+tqdm
+fastapi
+uvicorn
