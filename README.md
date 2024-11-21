@@ -1,9 +1,7 @@
 # NVFlare AWS Client Setup
-
 Simple Python scripts to download sites and job results from an API server.
 
 ## Prerequisites
-
 - Python 3.x
 - CUDA (GPU support)
 
@@ -13,7 +11,6 @@ pip install -r requirements.txt
 ```
 
 ## Configuration
-
 1. Copy `.env.default` to `.env`:
 ```bash
 cp .env.default .env
@@ -22,6 +19,19 @@ cp .env.default .env
 2. Edit `.env` with your server details:
 ```
 SERVER_URL="http://<server-ip>:<port>"
+```
+
+## Starting NVFlare Client
+1. Download and extract client:
+```bash
+python get_client.py <site-id>
+unzip downloads/site-<site-id>.zip -d /<site-id>
+```
+
+2. Start the client:
+```bash
+cd /<site-id>/startup/
+./start.sh
 ```
 
 ## Project Structure
@@ -41,28 +51,16 @@ SERVER_URL="http://<server-ip>:<port>"
 └── .env.default                # Environment template
 ```
 
-## Scripts
-
-### get_client.py
-Downloads a site as a ZIP file.
-
-```bash
-python get_client.py <site-id>
-unzip downloads/site-<site-id>.zip -d /<site-id>
-```
-
-### get_job_result.py
-Downloads and extracts job results.
-
+## Job Results
+Downloads and extracts job results:
 ```bash
 python get_job_result.py <job-id>
 ```
 
 ## Output
-
 Files are saved to the `downloads` directory:
-- Site downloads: `downloads/site-<site-id>.zip` (manually unzip using command above)
+- Site downloads: `downloads/site-<site-id>.zip`
 - Job results: `downloads/workspace_<job-id>.zip` (automatically extracted to `downloads/<job-id>/`)
 
 ## Notebooks
-See `notebooks/advanced_nvflare/README.md` for details on available notebooks for inference with standard and homomorphic encryption (HE) models.
+See `notebooks/advanced_nvflare/README.md` for details on available notebooks for inference with standard and homomorphic encryption (HE) models. The downloaded job results contain trained models that can be tested using these notebooks - just copy the model files from `downloads/<job-id>/` to `notebooks/advanced_nvflare/models/` to get started.
