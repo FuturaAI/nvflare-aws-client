@@ -13,9 +13,10 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+Add the ip address of the server machine and the server name ( server1 ) to the hosts in "/etc/hosts"
+
 ```bash
 sudo nano /etc/hosts
-# Write the the ip address and the name of the server
 # For example: 192.168.1.5  server1
 ```
 
