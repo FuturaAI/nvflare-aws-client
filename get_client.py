@@ -46,5 +46,6 @@ if __name__ == "__main__":
     output_dir = "downloads"
     download_site(site_id, output_dir)
 
+    print("Download completed\nUnzipping...")
     with ZipFile(f"downloads/site-{site_id}.zip", 'r') as zip_ref:
         zip_ref.extractall(f"./site-{site_id}")
