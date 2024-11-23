@@ -13,6 +13,12 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+```bash
+sudo nano /etc/hosts
+# Write the the ip address and the name of the server
+# For example: 192.168.1.5  server1
+```
+
 ## Configuration
 
 1. Copy `.env.default` to `.env`:
