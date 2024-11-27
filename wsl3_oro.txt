@@ -1,0 +1,100 @@
+powershell admin :
+wsl --install 
+wsl --list --online
+wsl --install -d Ubuntu-22.04
+wsl --setdefault Ubuntu-22.04
+wsl --set-default-version 2
+wsl --exec dbus-launch true
+
+wsl -l -v
+## dovrebbe essere in running
+# go to:
+
+C:\Users\frenz\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+#### wsl2startup.cmd #####
+@echo off
+wsl --exec dbus-launch true
+#save
+
+##### UBUNTU 22.04 #################################
+
+
+
+sudo apt update \
+&& sudo apt upgrade \
+&& sudo apt install python3-pip \
+&& sudo apt-get install -y python3-venv \
+&& sudo -H pip3 install  virtualenvwrapper 
+
+sudo apt update
+sudo apt install nvidia-cuda-toolkit
+sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+sudo apt update
+sudo apt install nvidia-driver-550
+nvcc --version
+nvidia-smi
+
+
+
+mkdir .virtualenv
+
+nano .bashrc
+xxxxx
+#write:
+alias python=python3
+alias pip=pip3
+#Virtualenvwrapper settings:
+export WORKON_HOME=$HOME/.virtualenvs
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+. /usr/local/bin/virtualenvwrapper.sh
+
+ctrls+ctrlx
+#####
+source .bashrc
+
+###SIMBOLIC LINK
+(once in a life!!!!!!)
+#ognuno metterà il proprio percorso con lo user specifico
+ln -s /mnt/c/Users/Danie/Google\ Drive/repos/
+ln -s /mnt/c/Users/visio/Il\ mio\ Drive/repos/
+ln -s /mnt/c/Users/danie/My\ Drive/repos/
+ln -s /mnt/c/Users/frenz/My\ Drive/repos/
+ln -s /mnt/c/Users/Frenz/Desktop
+ln -s /mnt/c/Users/danie/Documents/
+
+ln -s /mnt/c/Users/danie/My\ Drive/Colab\ Notebooks/_Dani/_infomanager/clienti/Bi_For/_Lavoro/test03bifor/
+
+
+
+sudo add-apt-repository ppa:graphics-drivers/ppa --yes
+sudo apt update
+sudo apt install nvidia-driver-550
+
+
+########### without virtual wrapper
+## andare nella cartella source env1/bin/activate
+
+mkvirtualenv env1
+deactivate
+mkvirtualenv env2
+
+workon
+lsvirtualenv
+
+### To activate one specific environment use workon + name of your environment:
+workon env1
+
+#firefox
+sudo apt-get install firefox
+Firefox
+
+
+sudo update-alternatives --config iptables
+
+Enter 1 to select iptables-legacy
+
+# Prevent wsl from auto config, adding this code to /etc/wsl.conf
+[network]
+generateHosts = false
+generateResolvConf = false

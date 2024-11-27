@@ -1,6 +1,11 @@
 # NVFlare AWS Client Setup
+The project contains 2 Python scripts to download sites and job results from an API server.
+Then use the sites for training and the notebooks for test validation.
 
-Simple Python scripts to download sites and job results from an API server.
+## WSL and Preconfiguration
+
+Reference file for pre-config wsl and ubuntu:
+- wsl3_oro.txt
 
 ## Prerequisites
 
